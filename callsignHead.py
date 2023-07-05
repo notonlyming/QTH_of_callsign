@@ -330,7 +330,8 @@ def get_callsign_head_assign(callsign_head:str):
     if 38930 <= country_code <= 38955: assign_to.add('卢旺达共和国')
     if 38964 <= country_code <= 39023: assign_to.add('特立尼达和多巴哥')
 
-    if len(assign_to)==0: Exception(f"这个呼号头部（{country_code}）超出ITU分配范围，请检查。")
+    if len(assign_to)==0: 
+        raise Exception(f"这个呼号头部（{country_code}）超出ITU分配范围，请检查。")
     return assign_to
 
 def get_china_prov_by_callsign_tail(callsign_tail:str):
@@ -368,7 +369,8 @@ def get_china_prov_by_callsign_tail(callsign_tail:str):
     if 0 <=prov_code <= 6655: assign_to.add('新疆')
     if 6936 <=prov_code <= 13591: assign_to.add('西藏')
 
-    if len(assign_to)==0: Exception(f"这个呼号尾部（{prov_code}）超出中国省内分配范围，请检查。")
+    if len(assign_to)==0: 
+        raise Exception(f"这个呼号尾部（{prov_code}）超出中国省内分配范围，请检查。")
     return assign_to
     
 if __name__ == '__main__':

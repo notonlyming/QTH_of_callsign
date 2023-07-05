@@ -3,16 +3,6 @@
 import os, sys
 import callsignHead
 
-# 查找首次数字出现的索引（除了首位）
-# 因为呼号前缀的首位可能是数字，如果返回索引为0表示没找到
-def get_first_number_index(call_sign:str):
-    find_index:int = 0
-    for i in range(1, len(call_sign)):
-        if f'{call_sign[i]}' in "0123456789":
-            find_index = i
-            break
-    return find_index
-
 # 分割呼号的各个部分，方便进行分析。
 def split_call_sign(call_sign:str):
     call_sign_part = dict()
